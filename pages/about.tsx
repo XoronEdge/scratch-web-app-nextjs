@@ -7,12 +7,7 @@ import { GetServerSideProps } from "next/types";
 import useAuth from "../hooks/useAuth";
 import styles from "../styles/Home.module.css";
 
-export default function Home({ session }) {
-  // const isAuthenticated = useAuth(true);
-
-  if (!session) {
-    return <h1>Loading</h1>;
-  }
+export default function About({ session }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,9 +17,9 @@ export default function Home({ session }) {
       </Head>
 
       <main className={styles.main}>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+        <h1 className="text-3xl font-bold underline">About world!</h1>
         <button onClick={() => signOut()}>Sign out</button>
-        <Link href="/about">About</Link>
+        <Link href="/">Home</Link>
       </main>
     </div>
   );
